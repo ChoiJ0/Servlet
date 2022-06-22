@@ -24,18 +24,12 @@ public class ServletTest11Controller extends HttpServlet {
 		
 		out.println("<html> <head> <title>로그인</title> </head> <body>");
 		
-		if(!userMap.containsKey(id)) {
-			out.println("id가 일치하지 않습니다.");
-			return;
-		} 
-		
-		if (!userMap.containsKey(pw)) {
-			out.println("password가 일치하지 않습니다.");
-			return;
-		} 
-		
-		if (userMap.containsKey(id) && userMap.containsKey(pw)) {
-			out.println("님 환영합니다.");
+		if(!id.equals(userMap.get("id"))) {
+			out.println("<h1>아이디가 일치하지 않습니다.</h1>");
+		} else if (!pw.equals(userMap.get("password"))) {
+			out.println("<h1>비밀번호가 일치하지 않습니다.</h1>");
+		} else {
+			out.println("<h1>" + userMap.get("name") + "님 환영합니다.</h1>");
 		}
 		
 		out.println("</body> </html>");
