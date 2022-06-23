@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BMI</title>
+<title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -12,33 +12,21 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-	<%
-		// 키 몸무게
-		int height = Integer.parseInt(request.getParameter("height"));
-		int weight = Integer.parseInt(request.getParameter("weight"));
-		
-		// BMI =  몸무게 / ((키 / 100.0) * (키 / 100.0));
-		double bmi = weight / ((height / 100.0) * (height / 100.0));
-		
-		String result = ""; 
-		if (bmi <= 20) {
-			result= "저체중";
-		} else if (bmi <= 25) {
-			result = "정상";
-		} else if (bmi <= 30) {
-			result = "과체중";
-		} else {
-			result = "비만";
-		}
-		
-	%>
-	
 	<div class="container">
-		<h1>BMI 테스트입니다</h1>
-		<div class="display-4">당신은 <span class="text-info"> <%=result %> </span>입니다.</div>
-		<div>BMI 수치 : <%= bmi %></div>
+		<h2>사칙 연산</h2>
+		<form method="post" action="/jsp/test04_1.jsp">
+			<div class="d-flex">
+				<input type="text" class="form-control col-4" name="num1">
+				<select name="cal" class="form-control col-4 mx-1">
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="X">X</option>
+					<option value="/">/</option>
+				</select>
+				<input type="text" class="form-control col-4" name="num2">
+				<button type="submit" class="btn btn-info">계산</button>
+			</div>
+		</form>
 	</div>
-	
-	
 </body>
 </html>
