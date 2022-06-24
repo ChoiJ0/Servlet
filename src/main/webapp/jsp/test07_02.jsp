@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>자바 제어문</title>
+<title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -14,40 +13,16 @@
 </head>
 <body>
 	
-	<%
-		List<String> goodsList = Arrays.asList(new String[]{ 
-		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
-		});
-	%>
-	
-	
-
-	
-	<div class="container">
-		<h1>장 목록</h1>
-		<hr>
-		<div>
-			<table class="text-">
-				<tr>
-					<td>번호</td>
-					<td>품목</td>
-				</tr>
-				<%
-					int num = 0;
-					for(String menu : goodsList) {	
-					num += 1;
-				%>
-				<tr>
-					<td><%= num %></td>
-					<td><%= menu %></td>
-				</tr>
-				<% } %>
-			</table>
-		</div>
+	<div>
+		<h2>메뉴검색</h2>
+		<form method="post" action="/jsp/test07_01.jsp">
+			<div class="d-flex">
+				<input type="text" name="search" class="form-control col-2">
+				<label><input type="checkbox" name="check" class="ml-2" value="true"> 4점 이하 제외</label><br>
+			</div>
+			<button type="submit" class="btn btn-success mt-2">검색</button>
+		</form>
 	</div>
-	
-	
-
 	
 </body>
 </html>

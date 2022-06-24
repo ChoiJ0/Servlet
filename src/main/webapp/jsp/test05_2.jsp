@@ -21,7 +21,7 @@
 			<br>
 			<label>인치<input type="checkbox" name="check" value="in"></label>
 			<label>야드<input type="checkbox" name="check" value="yd"></label>
-			<label>피트<input type="checkbox" name="check" value="pt"></label>
+			<label>피트<input type="checkbox" name="check" value="ft"></label>
 			<label>미터<input type="checkbox" name="check" value="m"></label>
 			<br>
 			<button type="submit" class="btn btn-success">변환</button>
