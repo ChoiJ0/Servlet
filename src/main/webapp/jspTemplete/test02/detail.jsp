@@ -17,11 +17,11 @@
 	<%@ include file="data.jsp" %>
 	<%
 		
-    int musicId = Integer.parseInt(request.getParameter("musicId"));
+    //int musicId = Integer.parseInt(request.getParameter("musicId"));
+	String search = request.getParameter("search");
     
-    String title = request.getParameter("title");
-    int targetId = 0; 
-    if(title == null){
+	int targetId = 0; 
+    if(search == null){
     	targetId = (Integer)musicInfo.get("id");
     }
 			
@@ -41,8 +41,8 @@
 				 
 				// title 이 없으면, id를 통한 검색
 				// title 있으면 title을 통한 검색
-				if((title != null && title.equals(music.get("title")))
-				|| (title == null && targetId == music_Id)){
+				if((search != null && search.equals(music.get("title")))
+				|| (search == null && targetId == music_Id)){
 					
 					
 			%>
