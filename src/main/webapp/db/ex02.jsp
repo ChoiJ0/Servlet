@@ -33,6 +33,7 @@
 				<td><%= resultSet.getString("name") %></td>
 				<td><%= resultSet.getString("yyyymmdd") %></td>
 				<td><%= resultSet.getString("email") %></td>
+				<td><a href="/db/ex02/delete?id=<%= resultSet.getInt("id") %>">삭제</a></td>
 			</tr>
 			<% } %>
 		</tbody>

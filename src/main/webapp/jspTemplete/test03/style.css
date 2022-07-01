@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+#wrep {
+	width:1200px;
+	height:800px;
+	margin:auto;
+}
+
+header {
+	height:80px;
+}
+
+.menu {
+	height:50px;
+}
+
+.main {
+	height:500px;
+}
+
+footer {
+	height:50px;
+}
